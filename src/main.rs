@@ -1,5 +1,3 @@
-//! The simplest possible example that does something.
-
 use ggez;
 use ggez::event;
 use ggez::graphics;
@@ -10,6 +8,8 @@ use ggez::graphics::{Color, Rect, DrawParam};
 use rand;
 use rand::Rng;
 use std::collections::VecDeque;
+use std::thread::sleep;
+use std::time;
 
 const SQUARE_SIZE: i32 = 30; // pixels
 const MAX_X: i32 = 20; // squares
@@ -103,7 +103,7 @@ impl Snake  {
     fn get_next_head(&self, direction: Direction) -> Square {
         let head = self.segments.front().unwrap();
 
-        match direction {
+        let mut new_head = match direction {
             Direction::LEFT => {
                 Square {
                     x: head.x - 1,
@@ -114,7 +114,7 @@ impl Snake  {
             Direction::DOWN => {
                 Square {
                     x: head.x,
-                    y: head.y - 1,
+                    y: head.y + 1,
                     color: head.color.clone()
                 }
             },
@@ -128,11 +128,15 @@ impl Snake  {
             Direction::UP => {
                 Square {
                     x: head.x,
-                    y: head.y + 1,
+                    y: head.y - 1,
                     color: head.color.clone()
                 }
             }
-        }
+        };
+
+        new_head.x = new_head.x % MAX_X;
+        new_head.y = new_head.y % MAX_Y;
+        new_head
     }
 
     pub fn head(&self) -> &Square {
@@ -170,7 +174,8 @@ impl GameState {
 
 impl event::EventHandler for GameState {
     fn update(&mut self, _ctx: &mut Context) -> GameResult {
-        self.snake.move_snake(Direction::LEFT);
+        self.snake.move_snake(Direction::DOWN);
+        sleep(time::Duration::from_millis(500));
         Ok(())
     }
 
