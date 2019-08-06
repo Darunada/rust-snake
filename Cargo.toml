@@ -1,0 +1,12 @@
+[package]
+name = "snake"
+version = "0.1.0"
+authors = ["Lea Fairbanks <lea.rae.fairbanks@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ggez = "0.5"
+cgmath = "0.17"
+rand = "0.7"
