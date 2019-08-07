@@ -20,6 +20,8 @@ $ cargo build --release
 $ ./target/release/snake
 ```
 
+If compilation fails, you may need a ggez dependency.  See: [BuildingForEveryPlatform.md](https://github.com/ggez/ggez/blob/master/docs/BuildingForEveryPlatform.md).  
+
 Contributing
 --------------------------------------
 Pull requests are welcome!
