@@ -3,4 +3,23 @@
 This is just a quick and dirty snake game I wrote in Rust.  It took me approximately 5 hours of effort to build this 
 game, and I have been learning Rust for about two weeks.
 
-Thanks for looking! 
+Thanks for looking!
+
+Installation
+--------------------------------------
+This game is built in Rust.  Is this your first time?
+
+- You have Rust installed, preferably via `rustup`
+- You have `~/.cargo/bin` added to your PATH variable
+- Build and run in one step with `cargo run`
+- or, Build the executable with 
+
+```
+$ cargo build --release
+  ... builds in a few minutes ...
+$ ./target/release/snake
+```
+
+Contributing
+--------------------------------------
+Pull requests are welcome!

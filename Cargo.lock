@@ -1762,7 +1762,7 @@ dependencies = [
 
 [[package]]
 name = "snake"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [
  "cgmath 0.17.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "ggez 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
