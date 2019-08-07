@@ -1,5 +1,7 @@
 # Snake Game
 
+[![Rustc Version 1.36+](https://img.shields.io/badge/rustc-1.36+-lightgray.svg)](https://blog.rust-lang.org/2017/02/02/Rust-1.15.html)
+
 This is just a quick and dirty snake game I wrote in Rust.  It took me approximately 5 hours of effort to build this 
 game, and I have been learning Rust for about two weeks.
 
